@@ -5,5 +5,7 @@ If you find a bug or have a suggestion, please send me an email or contact me vi
 
 If you use any of this code in your article, please acknowledge it by referencing the corresponding paper or this github repository.
 
+This project is licensed under the terms of the MIT license.
 
-Federico N. Soria ([Profile at Achucarro.org](https://www.achucarro.org/people/federico-soria))
+_Federico N. Soria_ ([Profile at Achucarro.org](https://www.achucarro.org/people/federico-soria))
+
