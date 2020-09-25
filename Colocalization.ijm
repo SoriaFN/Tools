@@ -1,8 +1,9 @@
 /*
-AUTOSEGMENTATION v1.0
----------------------
+COLOCALIZATION v1.0
+-------------------
 
-This script will segment image channels automatically based on a predefine threshold.
+This script segments image channels automatically based on a predefine threshold
+and calculates a colocalization percentage.
 
 -Needs 1 (only 1) multichannel image open to work.
 -The user can set a number of slices from the center of the z-stack to create a MIP.
@@ -46,12 +47,12 @@ thres_list = getList("threshold.methods");
 items = newArray("Draw ROI", "Full Image");
 Dialog.create("Autosegmentation Script for FIJI");
 Dialog.addChoice("Channel for reference ROI", ch_list, "1");
-Dialog.addString("Name for ref channel", "MAP2");
-Dialog.addChoice("Threshold for ref channel", thres_list, "Huang");
+Dialog.addString("Name for ref channel", "Ch1");
+Dialog.addChoice("Threshold for ref channel", thres_list, "Default");
 Dialog.addMessage("\n");
 Dialog.addChoice("Channel for colocalization", ch_list, "2");
-Dialog.addString("Name for coloc channel", "HA");
-Dialog.addChoice("Threshold for coloc channel", thres_list, "RenyiEntropy");
+Dialog.addString("Name for coloc channel", "Ch2");
+Dialog.addChoice("Threshold for coloc channel", thres_list, "Default");
 Dialog.addMessage("\n");
 Dialog.addSlider("z-stack slices for MIP", 1, slices, (round(slices/2)));
 Dialog.addRadioButtonGroup("Region of interest", items, 1, 2, "Draw ROI");
