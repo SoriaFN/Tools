@@ -1,6 +1,7 @@
-# ImageJ_macros
-A collection of ImageJ macros I use at the lab
+# ImageJ Macros
+A collection of ImageJ macros I use at the lab for analysis of fluorescence images
 
-Please if you use any of this code in your article, acknowledge it.
+If you use any of this code in your article, please acknowledge it.
 
-Federico N. Soria (Sep 2020)
+# Federico N. Soria (Sep 2020)
+Achucarro Basque Center for Neuroscience
