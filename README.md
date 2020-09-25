@@ -7,5 +7,11 @@ If you use any of this code in your article, please acknowledge it by referencin
 
 This project is licensed under the terms of the MIT license.
 
+## Macros currently listed (as of Sep 2020)
+
+- **DoG Filter**  A simple Difference-of-gaussians filter for fluorescence images.
+- **Microglia_Morphology**  A script to calculate Form factor, Density and Fractal Dimension from binary images of individual cells.
+- **Segment_Coloc**  A script to segment and calculate colocalization in multichannel images.
+
 _Federico N. Soria_ ([Profile at Achucarro.org](https://www.achucarro.org/people/federico-soria))
 
