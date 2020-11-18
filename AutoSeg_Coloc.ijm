@@ -1,6 +1,6 @@
 /*
-SEGMENTATION & COLOCALIZATION
------------------------------
+AUTOSEG_COLOC
+-------------
 
 This script segments image channels automatically based on a predefine threshold
 and calculates a colocalization percentage.
