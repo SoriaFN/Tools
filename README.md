@@ -1,5 +1,5 @@
 # ImageJ Macros
-**A random collection of ImageJ macros I use at the lab for analysis of fluorescence images.**
+**A collection of random ImageJ/FIJI macros I use at the lab for analysis of fluorescence images.**
 
 If you find a bug or have a suggestion, send an email (in my profile) or contact me via twitter (@SoriaFN).
 
