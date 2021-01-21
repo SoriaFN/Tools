@@ -19,7 +19,6 @@ if (nImages==0) {
 if (nImages>1) {
 	waitForUser("More than 1 image open. Please close all non-relevant images");
 }
-name=getTitle();
 run("Histogram", "stack");
 rename("Histogram");
 
@@ -84,18 +83,21 @@ if (crop==true) {
 	roiManager("select", 0);
 	setBackgroundColor(0, 0, 0);
 	run("Clear Outside", "stack");
-	run("Select None");	
+	run("Select None");
+	selectWindow(name_max);
+	saveAs("Tiff", dir+File.separator+name_max);
+	name=getTitle();
 }
 
 //Manual thresholding and binarization
 var thrs=0;
-selectImage(name_max);
+selectImage(name);
 run("Maximize");
 Stack.getStatistics(voxelCount, mean, min, max, stdDev);
 print("Min Value: "+min+"; Max value: "+max);
 run("Threshold...");
 waitForUser("Set Threshold", "Set Threshold level using the upper sliding bar \nThen click OK. \n \nDo not press Apply!\nCheck all slices to ensure all processes are connected!");
-selectImage(name_max); 
+selectImage(name); 
 getThreshold(thrs, upper);
 print("Threshold: "+thrs);
 
@@ -103,7 +105,7 @@ run("Convert to Mask", "method=Default background=Dark black");
 doCommand("Start Animation");
 showMessageWithCancel("Is the binary image OK?");
 doCommand("Stop Animation");
-saveAs("Tiff", dir+File.separator+"BIN_"+name_max);
+saveAs("Tiff", dir+File.separator+"BIN_"+name);
 name_bin=getTitle();
 
 //Measure area per frame
@@ -145,7 +147,7 @@ selectWindow("CUMUL_"+name);
 doCommand("Start Animation");
 showMessageWithCancel("Is the cumulated binary image OK?");
 doCommand("Stop Animation");
-saveAs("Tiff", dir+File.separator+"CUMUL_"+name_max);
+saveAs("Tiff", dir+File.separator+"CUMUL_"+name);
 
 //Measure cumulated area
 run("Clear Results");
