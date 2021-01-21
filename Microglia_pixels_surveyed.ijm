@@ -145,7 +145,7 @@ if (isOpen(name_bin)){
 
 //Movie of cumulated frames and area calculation
 selectWindow("FRAME_1");
-run("Concatenate...", "all_open title=CUMUL_"+name+" open");
+run("Concatenate...", "all_open title=[CUMUL_"+name+"] open");
 selectWindow("CUMUL_"+name);
 doCommand("Start Animation");
 showMessageWithCancel("Is the cumulated binary image OK?");
