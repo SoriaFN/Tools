@@ -15,6 +15,7 @@
  */
 
 //Initialization
+name=getTitle();
 if (nImages==0) {
 	exit("Please open an image");
 }
