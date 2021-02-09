@@ -15,7 +15,7 @@
  * 
  * Changes in v1.1
  * ---------------
- * -Added option to create a MIP
+ * -Added option to use only 1 slice instead of MIP.
  *
  * Federico N. Soria (federico.soria@achucarro.org)
  * July 2020
