@@ -16,6 +16,7 @@
  * Changes in v1.1
  * ---------------
  * -Added option to use only 1 slice instead of MIP.
+ * (I plan to add the option for manual thresholding in next version)
  *
  * Federico N. Soria (federico.soria@achucarro.org)
  * July 2020
