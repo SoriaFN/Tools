@@ -1,25 +1,25 @@
 /*
-SEGMENTATION AND COLOCALIZATION v.1.1
--------------------------------------
-
-This script segments image channels automatically based on a predefine threshold
-and calculates a colocalization percentage.
-
--Needs 1 (only 1) multichannel image open to work.
--The user can set a number of slices from the center of the z-stack to create a MIP.
--The user can choose to use a ROI or quantify the full image.
--A colocalization percentage will be calculated at the end.
--The script will create a custom table that can be copied to excel.
--Results will be saved in a folder of your choosing if box ticked.
-
-Changes in v1.1
----------------
--Added option to create a MIP
-
-
-Federico N. Soria (federico.soria@achucarro.org)
-July 2020
-*/
+ * SEGMENTATION AND COLOCALIZATION v.1.1
+ * ------------------------------------- 
+ *
+ *
+ * This script segments image channels automatically based on a predefine threshold
+ * and calculates a colocalization percentage.
+ *
+ * -Needs 1 (only 1) multichannel image open to work.
+ * -The user can set a number of slices from the center of the z-stack to create a MIP.
+ * -The user can choose to use a ROI or quantify the full image.
+ * -A colocalization percentage will be calculated at the end.
+ * -The script will create a custom table that can be copied to excel.
+ * -Results will be saved in a folder of your choosing if box ticked.
+ * 
+ * Changes in v1.1
+ * ---------------
+ * -Added option to create a MIP
+ *
+ * Federico N. Soria (federico.soria@achucarro.org)
+ * July 2020
+ */
 
 //CLEAR PREVIOUS RESULTS, ROI AND LOG INFO
 run("Collect Garbage");
