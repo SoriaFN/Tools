@@ -1,6 +1,6 @@
 /*
-SEGMENTATION AND COLOCALIZATION
--------------------------------
+SEGMENTATION AND COLOCALIZATION v.1.1
+-------------------------------------
 
 This script segments image channels automatically based on a predefine threshold
 and calculates a colocalization percentage.
@@ -11,6 +11,11 @@ and calculates a colocalization percentage.
 -A colocalization percentage will be calculated at the end.
 -The script will create a custom table that can be copied to excel.
 -Results will be saved in a folder of your choosing if box ticked.
+
+Changes in v1.1
+---------------
+-Added option to create a MIP
+
 
 Federico N. Soria (federico.soria@achucarro.org)
 July 2020
@@ -55,6 +60,8 @@ Dialog.addString("Name for coloc channel", "Ch2");
 Dialog.addChoice("Threshold for coloc channel", thres_list, "Default");
 Dialog.addMessage("\n");
 Dialog.addSlider("z-stack slices for MIP", 1, slices, (round(slices/2)));
+Dialog.addMessage("If you choose 1, the macro will consider only the central slice (no MIP)");
+Dialog.addMessage("\n");
 Dialog.addRadioButtonGroup("Region of interest", items, 1, 2, "Draw ROI");
 Dialog.addCheckbox("Save binary images, values an ROIs to disk?", false);
 Dialog.addMessage("\n(c) Federico N. Soria (federico.soria@achucarro.org)\nJuly 2020");
@@ -106,7 +113,8 @@ print("Substack created: slices "+first_slice+" to "+last_slice);
 selectWindow(name);
 run("Close");
 selectWindow(name2);
-if (slices>1) {
+getDimensions(width2, height2, channels2, slices2, frames2);
+if (slices2>1) {
 	run("Z Project...", "projection=[Max Intensity]");
 	print("MIP created.");
 }
