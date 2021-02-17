@@ -238,7 +238,4 @@ if (close_images==true) {
 	run("Close All");	
 }
 
-selectWindow("Quantification");
-run("Close");
-
 print("DONE!");
