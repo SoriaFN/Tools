@@ -2,7 +2,7 @@
  * MIP Time-Lapse v.0.1
  * --------------------
  *
- * BETA-Not tested version!!!
+ * BETA version (not tested)!!!
  *
  * This script generates a maximal intensity projections from 
  * tridimensional time-lapse images (xyzt hyperstacks).
@@ -24,11 +24,12 @@
 requires("1.53c");
 List.setCommands;
     if (List.get("StackReg ")=="") {
-       showMessage("Required Plugin", "<html><h3>Macro requires ImageJ-PlugIn \"StackReg\"!</h3>"
+       showMessage("Required Plugin", "<html><h3>Macro requires additional Plugin \"StackReg\"!</h3>"
      +"<a href=\"http://bigwww.epfl.ch/thevenaz/stackreg\">Download</a>"); exit(););
     }
 
 print("\\Clear");
+contrast = 1; //It can be changed, it is just for better visualization. I will make it optional soon.
 
 //MIP generator
 name=getTitle();
@@ -37,7 +38,7 @@ selectWindow(name);
 close();
 selectWindow("MAX_"+name);
 getDimensions(width, height, channels, slices, frames);
-run("Enhance Contrast...", "saturated=1");
+run("Enhance Contrast...", "saturated="+contrast);
 waitForUser("Is the image OK?");
 
 //Registration
@@ -61,7 +62,7 @@ while (reg==1) {
 	run("StackReg ", "transformation=["+typeReg+"]");
 	print("Registration DONE");
 	selectWindow("MAX_"+name);
-	run("Enhance Contrast", "saturated=1");
+	run("Enhance Contrast...", "saturated="+contrast);
 	run("Temporal-Color Code", "lut=Red/Green start=1 end="+frames);
 	reg=getBoolean("Does the image needs additional registration?");
 	selectWindow("MAX_colored");
@@ -70,7 +71,7 @@ while (reg==1) {
 
 //Cropping
 selectWindow("MAX_"+name);
-run("Enhance Contrast", "saturated=1");
+run("Enhance Contrast...", "saturated="+contrast);
 run("Temporal-Color Code", "lut=Red/Green start=1 end="+frames);
 selectWindow("MAX_colored");
 run("Maximize");
@@ -84,7 +85,7 @@ run("Crop");
 run("Clear Outside", "stack");
 run("Select None");
 selectWindow("MAX_"+name);
-run("Enhance Contrast", "saturated=1");
+run("Enhance Contrast...", "saturated="+contrast);
 doCommand("Start Animation");
 
 //Save files
