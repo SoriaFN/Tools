@@ -1,7 +1,9 @@
 /*
  * MIP Time-Lapse v.0.1
  * --------------------
- * 
+ *
+ * BETA-Not tested version!!!
+ *
  * This script generates a maximal intensity projections from 
  * tridimensional time-lapse images (xyzt hyperstacks).
  * 
@@ -11,7 +13,7 @@
  * 
  * PLANNED FEATURES:
  * -Optional cropping
- * -Optinal contrast enhancement
+ * -Optional contrast enhancement
  * 
  * Federico N. Soria (February 2021) 
  * federico.soria@achucarro.org
