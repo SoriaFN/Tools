@@ -14,6 +14,9 @@
  * federico.soria@achucarro.org
  */
 
+//REQUIREMENTS
+requires("1.53c");
+
 //Initialization
 name=getTitle();
 if (nImages==0) {
@@ -70,7 +73,7 @@ name_max=getTitle();
 //Cropping
 if (crop==true) {
 	selectWindow(name_max);
-	run("Temporal-Color Code", "lut=Red/Green start=1 end="+frames+" create"); //You can use Fede-redgreen" if you have it
+	run("Temporal-Color Code", "lut=Red/Green start=1 end="+frames+" create");
 	selectWindow("MAX_colored");
 	run("Maximize");
 	selectWindow("color time scale");
