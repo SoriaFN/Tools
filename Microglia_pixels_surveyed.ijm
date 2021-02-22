@@ -70,7 +70,7 @@ name_max=getTitle();
 //Cropping
 if (crop==true) {
 	selectWindow(name_max);
-	run("Temporal-Color Code", "lut=0-Fede-redgreen start=1 end="+frames+" create"); //You can use Fede-redgreen" if you have it
+	run("Temporal-Color Code", "lut=Red/Green start=1 end="+frames+" create"); //You can use Fede-redgreen" if you have it
 	selectWindow("MAX_colored");
 	run("Maximize");
 	selectWindow("color time scale");
