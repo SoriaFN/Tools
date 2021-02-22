@@ -7,7 +7,7 @@ A collection of random ImageJ/FIJI macros I use at the lab for analysis of fluor
 3. Save page as .ijm file
 4. Drag and drop the ijm file onto FIJI (or install macro in ImageJ)
 
-## Macros currently listed (as of Dec 2020)
+## Macros currently listed (as of Feb 2021)
 
 - **DoG Filter**  A simple Difference-of-gaussians filter for fluorescence images.
 - **Draw_Trajectory** Draws a trajectory of a single molecule on top of its video file based on coordinates previously calculated in TrackMate.
