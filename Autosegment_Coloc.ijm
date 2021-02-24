@@ -1,8 +1,6 @@
 /*
  * SEGMENTATION AND COLOCALIZATION v.1.1
  * ------------------------------------- 
- *
- *
  * This script segments image channels automatically based on a predefine threshold
  * and calculates a colocalization percentage.
  *
