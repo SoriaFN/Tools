@@ -8,7 +8,8 @@
  * The macro works with time-lapse images where a single cell is the largest fluorescent body.
  * If more than one cell is present, crop the image before starting the macro.
  * 
- * The image should be drift-corrected if possible.
+ * The image should be drift-corrected if possible 
+ * You can use (3D drift correction in hyperstack or StackReg in MIP)
  *
  * Copyright (c) 2020, Federico N. Soria 
  * federico.soria@achucarro.org
