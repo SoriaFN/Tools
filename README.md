@@ -11,4 +11,4 @@ A collection of random ImageJ/FIJI macros I use at the lab for analysis of fluor
 
 - **DoG Filter**  A simple Difference-of-gaussians filter for fluorescence images.
 - **Draw_Trajectory** Draws a trajectory of a single molecule on top of its video file based on coordinates previously calculated in TrackMate.
-- **Autosegment_and_coloc**  A script to segment and calculate colocalization in multichannel images.
+- **Autosegment_coloc**  A script to segment and calculate colocalization in multichannel images.
