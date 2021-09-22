@@ -48,10 +48,10 @@ for (i=0; i<channels; i++){
 thres_list = getList("threshold.methods");
 Dialog.create("Choose your destiny...");
 Dialog.addChoice("Channel for cell segmentation", ch_list, "2");
-Dialog.addString("Name for segmentation channel", "NeuN");
+Dialog.addString("Name for segmentation channel", "CELL");
 Dialog.addMessage("\n");
 Dialog.addChoice("Channel for puncta", ch_list, "3");
-Dialog.addString("Name for puncta channel", "ApoD");
+Dialog.addString("Name for puncta channel", "PUNCTA");
 Dialog.addChoice("Threshold for puncta channel", thres_list, "RenyiEntropy");
 Dialog.addNumber("Min puncta size in pixels", 10);
 Dialog.addMessage("\n");
