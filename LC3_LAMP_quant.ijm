@@ -111,7 +111,7 @@ puncta (3, slice2, 4);
 selectWindow("LAMP1-bin");
 puncta (3, slice3, 4);
 
-//Contamos puncta LC3
+//LC3 QUANTIFICATION
 selectWindow("LC3-bin");
 puncta (4, slice1, 4); //Function modifiers: channel, slice, size of punctum in pixels
 selectWindow("LC3-bin");
