@@ -1,12 +1,13 @@
 /*
  * CALCIUM IN VIVO VIDEO PROCESSING
  * --------------------------------
- * A macro to process calcium imaging videos from our 2P setup.
+ * A script to crop, align and denoise calcium imaging videos
+ * from our in vivo 2-Photon setup.
  * 
  * Registration is done manually with TurboReg (use batch).
  * 
  * Denoising is performed with the "Stack Moving Average" macro 
- * included by default in ImageJ
+ * included by default in ImageJ.
  * 
  * Federico N. Soria (c) 2023
  */
@@ -30,7 +31,7 @@ id=Dialog.getString();
 hz=Dialog.getNumber();
 reg=Dialog.getCheckbox();
 denoise=Dialog.getCheckbox();
-dir=getDirectory("Choose a folder to save Result files.");
+dir=getDirectory("Choose a folder to save Result files");
 
 //Cropping and scaling
 run("Specify...", "width="+height+" height="+height+" x=0 y=0 slice=1");
