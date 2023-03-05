@@ -9,7 +9,7 @@ A collection of random ImageJ/FIJI macros I use at the lab for analysis of micro
 
 ## Macros currently listed (as of Feb 2023)
 
-- **2Pvideos_processing_calcium**  A script to crop, align and denoise calcium imaging videos from in vivo 2-Photon microscopy.
+- **2Pvideos_processing_calcium**  A script to crop, align and denoise calcium imaging videos from in vivo 2-Photon microscopy. Requires TurboReg.
 - **Autosegment_coloc**  A script to segment and calculate colocalization in multichannel images.
 - **DoG Filter**  A simple Difference-of-gaussians filter for fluorescence images.
 - **Draw_Trajectory** Draws a trajectory of a single molecule on top of its video file based on coordinates previously calculated in TrackMate.
