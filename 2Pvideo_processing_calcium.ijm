@@ -1,13 +1,21 @@
 /*
  * CALCIUM IN VIVO VIDEO PROCESSING
  * --------------------------------
- * A script to crop, align and denoise calcium imaging videos
- * from our in vivo 2-Photon setup.
+ * A macro to process calcium imaging videos from our 2P setup.
  * 
- * Registration is done manually with TurboReg (use batch).
+ * Rescaling is done since our software export timelapse videos with
+ * "slices" and "frames" inverted (Femtonics' MES 6).
+ * 
+ * Registration is done manually with TurboReg (use batch). The script
+ * will produce an average intensity z-projection to use as reference.
  * 
  * Denoising is performed with the "Stack Moving Average" macro 
  * included by default in ImageJ.
+ * 
+ * Tested only with our images.
+ * 
+ * Dependencies:
+ * -TurboReg (only if you click on "Register with TurboReg").
  * 
  * Federico N. Soria (c) 2023
  */
@@ -20,7 +28,6 @@ getDimensions(width, height, channels, slices, frames);
 getPixelSize(unit, pixelWidth, pixelHeight);
 
 //GUI
-items=newArray("Rigid Body", "Translation", "Affine", "Scaled Rotation", "Bilinear");
 Dialog.create("Choose your destiny...");
 Dialog.addString("Identifier", "mouse6_3mA", 20);
 Dialog.addNumber("Acquisition speed in Hz", 1.26);
@@ -31,15 +38,13 @@ id=Dialog.getString();
 hz=Dialog.getNumber();
 reg=Dialog.getCheckbox();
 denoise=Dialog.getCheckbox();
-dir=getDirectory("Choose a folder to save Result files");
+frame_duration=1/hz;
+dir=getDirectory("Choose a folder to save Result files.");
 
 //Cropping and scaling
 run("Specify...", "width="+height+" height="+height+" x=0 y=0 slice=1");
 run("Crop");
-Stack.setXUnit("um");
-Stack.setYUnit("um");
-frame_duration=1/hz;
-run("Properties...", "channels=1 slices=1 frames="+slices+" pixel_width="+pixelWidth+" pixel_height="+pixelWidth+" voxel_depth=1 frame=["+frame_duration+" sec]");
+rescale();
 saveAs("tiff", dir+File.separator+id+"_"+name);
 name2=getTitle();
 
@@ -77,7 +82,7 @@ function rescale() {
 	run("Properties...", "channels=1 slices=1 frames="+slices+" pixel_width="+pixelWidth+" pixel_height="+pixelWidth+" voxel_depth=1 frame=["+frame_duration+" sec]");
 }
 
-function denoiser() { //from the original Stack Moving Average macro from ImageJ
+function denoiser() { //from the original Stack Moving Average macro within ImageJ folder
 	k3 = "[0 1 0 0 1 0 0 1 0]";
 	k5 = "[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0]";
 	k7a = "[0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1";
@@ -110,3 +115,4 @@ function denoiser() { //from the original Stack Moving Average macro from ImageJ
 	selectImage(id2);
 	close;
 }
+
