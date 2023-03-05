@@ -29,7 +29,7 @@ getPixelSize(unit, pixelWidth, pixelHeight);
 
 //GUI
 Dialog.create("Choose your destiny...");
-Dialog.addString("Identifier", "mouse6_3mA", 20);
+Dialog.addString("Identifier", "mouse1", 20);
 Dialog.addNumber("Acquisition speed in Hz", 1.26);
 Dialog.addCheckbox("Register with TurboReg?", true);
 Dialog.addCheckbox("Denoise with rolling average", true);
