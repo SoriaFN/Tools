@@ -20,8 +20,7 @@
  * 
  * Please cite the paper if you use it in your analysis.
  * 
- * CONTACT
- * federico.soria@achucarro.org
+ * Federico N. Soria 2023
  */
 
 //INITIALIZATION
