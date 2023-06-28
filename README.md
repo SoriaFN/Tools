@@ -14,6 +14,6 @@ A collection of random ImageJ/FIJI macros I use at the lab for analysis of micro
 - **DoG Filter**  A simple Difference-of-gaussians filter for fluorescence images.
 - **Draw_Trajectory** Draws a trajectory of a single molecule on top of its video file based on coordinates previously calculated in TrackMate.
 - **LC3_LAMP_quant**  A script to quantify LC3-LAMP colocalization and number, size and fluorescence intensity of puncta in a cell-defined ROI.
-- **Lesion_Profiler**  A script to draw and quantify linear profiles according to a circular-ish ROI (e.g. a lesion).
+- **Lesion_Profiler**  A script to draw and quantify linear profiles according to a circular-ish ROI (e.g. a lesion, a tumour).
 - **Organoids_analyzer**  A script to segment brightfield images of brain organoids (or other objects) and obtain the shape descriptors.
 - **Puncta_quant**  A script to segment cells and calculate puncta in multichannel images.
