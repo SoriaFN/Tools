@@ -7,6 +7,9 @@ A collection of random ImageJ/FIJI macros I use at the lab for analysis of micro
 3. Save page as .ijm file
 4. Drag and drop the ijm file onto FIJI (or install macro in ImageJ)
 
+## How to cite
+Please acknowledge these scripts if you use them in your publication (just cite the repository).
+
 ## Macros currently listed (as of Jun 2023)
 
 - **2Pvideos_processing_calcium**  A script to crop, align and denoise calcium imaging videos from in vivo 2-Photon microscopy. Requires TurboReg.
