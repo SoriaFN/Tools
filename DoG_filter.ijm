@@ -32,4 +32,4 @@ selectWindow("max");
 close();
 selectWindow("min");
 run("Enhance Contrast", "saturated=0.35");
-rename(name+"-Enhanced");
+rename(name+"-DoG");
