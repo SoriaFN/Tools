@@ -29,24 +29,28 @@ getPixelSize(unit, pixelWidth, pixelHeight);
 
 //GUI
 Dialog.create("Choose your destiny...");
-Dialog.addString("Identifier", "mouse1", 20);
+Dialog.addString("Identifier", "mouse4_3mA", 20);
 Dialog.addNumber("Acquisition speed in Hz", 1.26);
+Dialog.addCheckbox("Crop?", false);
 Dialog.addCheckbox("Register with TurboReg?", true);
 Dialog.addCheckbox("Denoise with rolling average", true);
 Dialog.show();
 id=Dialog.getString();
 hz=Dialog.getNumber();
+crop=Dialog.getCheckbox();
 reg=Dialog.getCheckbox();
 denoise=Dialog.getCheckbox();
 frame_duration=1/hz;
 dir=getDirectory("Choose a folder to save Result files.");
 
 //Cropping and scaling
-run("Specify...", "width="+height+" height="+height+" x=0 y=0 slice=1");
-run("Crop");
-rescale();
-saveAs("tiff", dir+File.separator+id+"_"+name);
-name2=getTitle();
+if (crop==true) {
+	run("Specify...", "width="+height+" height="+height+" x=0 y=0 slice=1");
+	run("Crop");
+	rescale();
+	saveAs("tiff", dir+File.separator+id+"_"+name);
+	name2=getTitle();
+}
 
 //Registration (use batch)
 if (reg==true) {
@@ -115,4 +119,3 @@ function denoiser() { //from the original Stack Moving Average macro within Imag
 	selectImage(id2);
 	close;
 }
-
