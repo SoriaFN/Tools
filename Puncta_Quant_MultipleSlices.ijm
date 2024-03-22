@@ -1,6 +1,6 @@
 /*
- * LC3-LAMP Quant (beta)
- * ---------------------
+ * Puncta Quant ("Multiple Slices" version)
+ * ----------------------------------------
  * 
  * This macro was modified from Puncta_quant.ijm 
  * (https://github.com/SoriaFN/Tools)
