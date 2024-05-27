@@ -1,10 +1,10 @@
 /*
- * Puncta Quant ("Multiple Slices" version)
- * ----------------------------------------
+ * LC3-LAMP Quant (beta)
+ * ---------------------
  * 
  * This macro was modified from Puncta_quant.ijm 
  * (https://github.com/SoriaFN/Tools)
- * 
+ *
  * This macro is intended for multichannel (3+ channels) fluorescence image stacks (3+ slices).
  * It will segment a particular cell type based on a cytoplasmic marker (Iba1, GFAP, etc)
  * and it will quantify number, size and fluorescence intensity of puncta (LCR, LAMP, CatD, etc)
@@ -17,7 +17,7 @@
  * the mask, but the Mean Gray Value (MGV) quantification of each punctum will be calculated in  
  * the original unfiltered image.
  * 
- * The QUANTIFICATION table will render the cell area ON THE TOP, and then the size and MGV of each punctum.
+ * The QUANTIFICATION table will render the cell area AT THE TOP, and then the size and MGV of each punctum.
  * The SUMMARY table will render summarized data on each puncta and their absolute colocalization. 
  * 
  * If the "Save to disk" option is used, the macro will save all images created, ROIs, and tables.
@@ -27,6 +27,12 @@
  * 
  * Federico N. Soria 2024
  * ACHUCARRO BASQUE CENTER FOR NEUROSCIENCE
+ *
+ *
+ * Thanks to the following labs for beta-testing and feedback:
+ * -Amanda Sierra (Achucarro, Bilbao)
+ * -Ainhoa Plaza (UPV/EHU, Bilbao)
+ * -Agnes Nadjar (Magendie, Bordeaux)
  */
 
 //INITIALIZATION
