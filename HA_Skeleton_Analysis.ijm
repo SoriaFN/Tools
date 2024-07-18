@@ -2,6 +2,8 @@
 //federico.soria@achucarro.org
 //Last updated - May 2022
 
+//NOTE: Change threshold method in line 39 to the one that suits your images.
+
 //INITIALIZATION
 print("\\Clear");
 requires("1.43f");
